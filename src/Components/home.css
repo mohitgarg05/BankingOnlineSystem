@@ -1,0 +1,138 @@
+.homelayout .online h1{
+    font-size: 130px;
+}
+.homelayout .online{
+    padding: 0%;
+    margin-top: 80px;
+}
+.homelayout{
+    color: white;
+    width: 40em;
+    margin-top: 100px;
+    margin-left:800px ;
+}
+.homelayout .quotes p{
+    font-style: italic;
+    margin-top: 20px;
+}
+.homelayout .banking{
+    margin-left: 200px;
+    padding: 0%;
+    font-size: 30px;
+}
+
+.topnav {
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+ 
+  .topnav a:hover {
+    background-color: rgb(11, 64, 71);
+    color: white;
+  }
+
+  .homelayout .allcustomers{
+      letter-spacing: 4px;
+     margin-left: 60px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+  }
+  #customerlist{
+      list-style: none;
+  }
+  #customerlist li{
+      text-transform: capitalize;
+  }
+  #customerlist a:visited {
+     color: white;
+  }
+
+  .homelayout .name ,.email,.balance{
+      margin-top: 80px;
+      font-size: 30px;
+      letter-spacing: 6px;
+     
+  }
+  .homelayout .name{
+      text-transform: capitalize;
+  }
+
+  
+
+
+  .homelayout .namevalue{
+      margin-left: 227px;
+  }
+
+  .homelayout .emailvalue{
+      margin-left: 180px;
+      margin-top: 10px;
+  }
+  .homelayout .balancevalue{
+    margin-left: 240px;
+    margin-top: 10px;
+}
+
+.homelayout button{
+    background-color: rgb(11, 64, 71);
+    border: none;
+}
+
+.transferbutton{
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+
+.homelayout .sendername{
+    margin-top: 80px;
+}
+.homelayout .receivername,.amounttransfered{
+    margin-top: 20px;
+}
+
+.homelayout .sendername,.receivername,.amounttransfered label{
+    font-size: 20px;
+}
+
+
+.homelayout .nameholder{
+    margin-left: 80px;
+    margin-top: 80px;
+}
+
+.homelayout table{
+    margin-top: 50px;
+    overflow-x:auto;
+}
+.homelayout .table{
+    overflow-x:auto;    
+
+    margin-top: 10px;
+}
+.homelayout table, th, td {
+    border: 1px solid #ddd;
+  }
+
+
+  .homelayout table{
+    border-collapse: collapse;
+  }
+
+  .homelayout th,td{
+    padding: 8px;
+    text-align: left;
+  }
+
+
+  .homelayout tr:nth-child(even) {background-color: rgb(11, 64, 71);}

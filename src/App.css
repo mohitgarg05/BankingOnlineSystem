@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("G:\Banking System\banking-system-frontend\src\Images\Homeimg.png");
+    background-image: url("./Images/Homeimg.png");
     
     
     background-repeat: no-repeat; /* Do not repeat the image */

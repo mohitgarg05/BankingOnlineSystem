@@ -1,7 +1,7 @@
 {
   "name": "banking-system-frontend",
   "version": "0.1.0",
-  "private": true,  
+  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
@@ -13,6 +13,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "serve": "^11.3.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

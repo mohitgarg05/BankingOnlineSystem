@@ -9,7 +9,21 @@ body {
     background-image: url("./Images/Homeimg.png");
     
     
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */ 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center center;
+    background-attachment: fixed; 
     
+}
+
+@media(max-width:998px){
+    html{
+        font-size:45%
+    }
+   
+}
+@media(max-width:768px){
+    html{
+        font-size:45%
+    }
 }

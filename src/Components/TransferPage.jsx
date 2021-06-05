@@ -11,7 +11,7 @@ class TransferPage extends Component{
         this.pv = this.pv.bind(this);
         this.gv = this.gv.bind(this);
         this.handleclick = this.handleclick.bind(this);
-        this.TransferHistory = this.TransferHistory.bind(this);
+      
         this.state={
             transferdetails:[],
             sender:"",
@@ -21,7 +21,8 @@ class TransferPage extends Component{
             receiverAmount:"",
             loading:false,
             Dates:"",
-            Times:""
+            Times:"",
+            error:false
             
         }
     }
@@ -31,7 +32,7 @@ class TransferPage extends Component{
 
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
       
-        console.log(date);
+        
       this.setState({Dates:date})
       this.setState({Times:time})
 
@@ -60,15 +61,20 @@ class TransferPage extends Component{
         
         try {
             const res = await axios.get('https://banking-online-system.herokuapp.com/')
-      
+
+            let obj = res.data.find(o => o.Name === this.state.receiver);
+            console.log(obj);
+            if(obj===undefined)
+            {
+               this.setState({error:true})
+            }
+            else{
+                this.setState({receiverAmount : obj.AccountBalance})
+                console.log(this.state.receiverAmount);
+            }
            
-        res.data.map((items)=>{
-                
-                if(items.Name === this.state.receiver)
-                {
-                    this.setState({receiverAmount : items.AccountBalance})
-                }
-         })
+           
+            
       
             
         } catch (error) {
@@ -85,10 +91,15 @@ class TransferPage extends Component{
        'date' : this.state.Dates,
        'time' : this.state.Times
         }
-        axios.post("https://banking-online-system.herokuapp.com/history", formData, {
-        }).then(res => {
-            console.log(res)
-        })
+
+        if(!this.state.error){
+            axios.post("https://banking-online-system.herokuapp.com/history", formData, {
+            }).then(res => {
+                console.log(res)
+            })
+        }
+
+       
 
 
 
@@ -112,28 +123,26 @@ class TransferPage extends Component{
 
        
     }
-    TransferHistory(e){
-        this.setState({transferhistory: true})
-    }
+   
 
 
     render(){
        if(this.state.loading)
-       {
+       {    
            return(
                <div className="container mr-auto homelayout">
                   <p style={{fontSize:"200px",marginLeft:"170px",marginTop:"200px"}}>  <i class="fa fa-spinner fa-spin"></i></p>
                </div>
            );
        }
-       else if(this.state.transferhistory)
-       {
-           return(
-               <>
-                 <TransferHistory array={this.state.array} />
-               </>
-           );
-       }
+      else if(this.state.error){
+        return(
+            <div className="errorlayout">
+                <p id="errormsg" >User not found </p>
+
+            </div>
+        );
+      }
        else{
         return(<>
             <form className="container mr-auto homelayout" method="PUT" onSubmit={this.handleclick}>

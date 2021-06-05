@@ -43,7 +43,7 @@ export default  class Allcustomers extends Component{
                                     </ul>
                                 </div>
                               
-                                <div className="col-md-1 offset-md-3" >
+                                <div id="icon" className="col-md-1 offset-md-3" >
                                         <a href={'/customers/'+ items._id}>  <i class="fa fa-arrow-right"></i></a>
                                 </div>
                                

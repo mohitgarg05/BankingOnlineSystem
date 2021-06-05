@@ -34,7 +34,7 @@ export default  class Allcustomers extends Component{
                     <h1 className="allcustomers">Account Holders</h1>
                     { customer.map(items=>(
                         <>
-                            <div className="row">
+                            <div className="row" style={{marginLeft:"50px"}}>
                               
                                 <div className="col-md-4">
                                     <ul id="customerlist">

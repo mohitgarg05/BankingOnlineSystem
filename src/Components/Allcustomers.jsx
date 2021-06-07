@@ -38,7 +38,7 @@ export default  class Allcustomers extends Component{
                               
                                 <div className="col-md-4">
                                     <ul id="customerlist">
-                                        <li ><a href={'/customers/'+ items._id}>{items.Name}</a></li>
+                                        <li><a  href={'/customers/'+ items._id}>{items.Name}</a></li>
                                        
                                     </ul>
                                 </div>
@@ -48,6 +48,8 @@ export default  class Allcustomers extends Component{
                                 </div>
                                
                             </div>
+
+                            
 
                         </>
                     ))}

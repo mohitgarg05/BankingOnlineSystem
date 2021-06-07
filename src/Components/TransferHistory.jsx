@@ -29,11 +29,11 @@ class TransferHistory extends Component{
                <Navbar />
                <div className="table">
                <table >
-                            <tr>
-                                <th>Sender Name</th>
-                                <th>Recevier Name</th>
-                                <th>Amount</th>
-                                <th>Date and Time</th>
+                            <tr >
+                                <th style={{paddingLeft:"23px",paddingTop:"20px"}}>Sender Name</th>
+                                <th style={{paddingLeft:"27px",paddingTop:"20px"}}>Recevier Name</th>
+                                <th style={{paddingLeft:"22px",paddingTop:"20px"}}>Amount</th>
+                                <th style={{paddingLeft:"47px",paddingTop:"20px"}}>Date and Time</th>
                             </tr>
                           
                {historys.map((items)=>(

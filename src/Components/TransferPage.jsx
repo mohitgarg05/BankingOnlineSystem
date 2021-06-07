@@ -1,8 +1,7 @@
 import { Component } from "react";
 import { withRouter } from "react-router";
 
-import axios from 'axios'
-import TransferHistory from './TransferHistory'
+import axios from 'axios';
 import Navbar from './Navbar'
 class TransferPage extends Component{
     constructor(props) {
@@ -113,12 +112,14 @@ class TransferPage extends Component{
         axios.put("https://banking-online-system.herokuapp.com/transfer", data, {
         }).then(res => {
             console.log(res)
+           
         }).catch((e)=>{
             console.log(e);
         })
 
         setTimeout(()=>{
             this.setState({loading:false})
+            alert("Transfer Successfull")
         },1000)
 
        
@@ -152,12 +153,13 @@ class TransferPage extends Component{
                         <h1>Start Transaction</h1> 
                     </div>
                     
+                    
                     <div className="row sendername">
                         <div className="col-md-6">
                             <label>Sender Name</label>
                         </div>
                         <div className="col-md-4">
-                            <input style={{backgroundColor:"transparent"}} type="text" name="sender" value={this.state.sender} onChange={this.pv} required="on"></input>
+                            <input style={{backgroundColor:"white",border:"none"}} placeholder="Enter Sender's Name.." type="text" name="sender" value={this.state.sender} onChange={this.pv} required="on"></input>
                         </div>
                     </div>
                     <div className="row receivername" >
@@ -165,7 +167,7 @@ class TransferPage extends Component{
                             <label>Recevier Name</label>
                         </div>
                         <div className="col-md-4">
-                            <input style={{backgroundColor:"transparent"}} type="text" value={this.state.receiver} onChange={this.gv} required="on"></input>
+                            <input style={{backgroundColor:"white",border:"none"}}  placeholder="Enter Receiver's Name.." type="text" value={this.state.receiver} onChange={this.gv} required="on"></input>
                         </div>
                     </div>
                     <div className="row amounttransfered" >
@@ -173,7 +175,7 @@ class TransferPage extends Component{
                             <label>Amount</label>
                         </div>
                         <div className="col-md-4">
-                            <input style={{backgroundColor:"transparent"}} type="text" value={this.state.amount} onChange={this.ev} required="on"></input>
+                            <input id="placeholder" style={{backgroundColor:"white",border:"none",width:"250.4px",height:"31.6px"}} placeholder="Enter Amount.." type="text" value={this.state.amount} onChange={this.ev} required="on"></input>
                         </div>
                     </div>
                      <div className="row transferbutton" >
@@ -182,7 +184,7 @@ class TransferPage extends Component{
                             </button>
             
                      </div>
-                     
+                    
                     
 
         

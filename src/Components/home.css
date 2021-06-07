@@ -106,6 +106,10 @@
 .transferbutton{
     margin-left: 250px;
     margin-top: 20px;
+    color: white;
+}
+.transferbutton .btn{
+    color: white;
 }
 
 
@@ -119,6 +123,9 @@
 .homelayout .sendername,.receivername,.amounttransfered label{
     font-size: 20px;
 }
+/* .homelayout .sendername,.receivername,.amounttransfered input :focus{
+    color: black;
+} */
 
 .amounttransfered input {
     font-size: 22px;

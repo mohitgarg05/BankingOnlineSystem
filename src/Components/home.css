@@ -67,6 +67,9 @@
   #icon  :hover{
     color: black;
   }
+  #icon a{
+      color: white;
+  }
   #customerlist li{
       text-transform: capitalize;
   }

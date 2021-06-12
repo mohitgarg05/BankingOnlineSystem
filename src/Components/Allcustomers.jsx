@@ -7,11 +7,12 @@ export default  class Allcustomers extends Component{
     constructor(props) {
         super(props)
         this.state={
-            customer:[]
+            customer:[],loading:false
         }
     }
 
     componentDidMount(){
+        this.setState({loading:true})
         axios.get('https://banking-online-system.herokuapp.com/')
              .then(res=>{
                  console.log(res.data);
@@ -21,12 +22,27 @@ export default  class Allcustomers extends Component{
              .catch(err =>{
                  console.log(err);
              })
+
+             
+        setTimeout(()=>{
+            this.setState({loading:false})
+            
+        },1600)
+
      }
  
 
 
     render(){
         const {customer} =this.state
+        if(this.state.loading)
+       {    
+           return(
+               <div className="container mr-auto homelayout">
+                  <p style={{fontSize:"200px",marginLeft:"170px",marginTop:"200px"}}>  <i class="fa fa-spinner fa-spin"></i></p>
+               </div>
+           );
+       }
         return(<>
       
                 <div className="container mr-auto homelayout" >
